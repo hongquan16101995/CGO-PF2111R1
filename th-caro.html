@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CaroGame</h1>
+    <hr>
+    <div id="boardGame"></div>
+    <hr>
+    <button onclick="play()">Play</button>
+    <button onclick="start()">Start</button>
+    <script>
+        let arr = new Array(5)
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = [0, 0, 0, 0, 0]
+        }
+
+        function start() {
+            let data = ""
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    data += arr[i][j] + "&ensp;"  //&nbsp;  &emsp;  &ensp;
+                }
+                data += "<br>"
+            }
+
+            document.querySelector("#boardGame").innerHTML = data
+        }
+
+        function play() {
+            let x = +prompt("Nhập vào vị trí hàng: ")
+            let y = +prompt("Nhập vào vị trí cột: ")
+            arr[x][y] = "x"
+            start()
+        }
+
+
+
+        // let arr = [1,2,3]
+        // for (let i = 0; i <= array.length-1; i++) {
+        // }
+        // //lấy ra phần tử cuối cùng của mảng: arr[arr.length-1]
+    </script>
+</body>
+
+</html>

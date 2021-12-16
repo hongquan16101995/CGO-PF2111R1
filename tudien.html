@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button onclick="myTranslate()">Translate</button>
+    <p id="result"></p>
+</body>
+<script>
+    let english = ["Cat", "Dog", "Tiger", "Lion"]
+    let vn = ["Mèo", "Chó", "Hổ", "Sử tử"]
+
+    function myTranslate() {
+        let inputValue = document.getElementById("input").value
+        let check = false
+        for (let i = 0; i < english.length; i++) {
+            if (english[i] === inputValue) {
+                document.getElementById("result").innerHTML = "Kết quả là: " + vn[i]
+                check = true
+                break;
+            }
+        }
+        if (check === false) {
+            document.getElementById("result").innerHTML = "Kết quả là: Không tìm thấy"
+        }
+    }
+</script>
+
+</html>
