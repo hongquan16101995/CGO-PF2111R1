@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a = 10
+    let b = 100
+    let arr = [10, 100]
+
+
+    function swap(soA ,soB) {
+        let temp = soA
+        soA = soB
+        soB = temp
+    }
+
+    function swap1(soA ,soB) {
+        a = 1000
+        soA = 100
+        soB = 10
+    }
+
+    function swap2(arr) {
+        arr[0] = 100
+        arr[1] = 10
+    }
+
+    console.log(a); //10
+    console.log(b); //100
+    console.log(arr); //[10, 100] => [100, 10]
+
+    swap1(a,b)
+    swap2(arr) //=> [100, 10]
+
+    console.log(a); //10
+    console.log(b); //100
+    console.log(arr); //[100, 10]
+</script>
+</html>

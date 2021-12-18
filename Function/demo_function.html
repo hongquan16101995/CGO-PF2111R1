@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+</body>
+<script>
+    //cú pháp hàm cơ bản
+    function display() {
+        // thân hàm....
+    }
+
+    //hàm không tham số, không giá trị trả về: hàm logic
+    function display1() {
+        document.getElementById("result").innerHTML = "HelloWorld"
+    }
+    display1()
+
+    //hàm có tham số, có giá trị trả về
+    function display2(a, b) {
+        let result = a + b
+        return result
+    }
+    console.log(display2(10, 20));
+    console.log(display2(100, 200));
+
+    //hàm không tham số, có giá trị trả về
+    function display3() {
+        let a = 500
+        let b = 500
+        return a + b
+    }
+    console.log(display3());
+
+    //hàm có tham số, không có giá trị trả về
+    function display4(word) {
+        console.log(word);
+        // alert(word)
+    }
+    display4("ByeBye")
+
+    //ví dụ về return
+    function test() {
+        let a = 200
+        if (a < 50) {
+            return "Hello"
+        } else if(a < 80) {
+            return "Bye"
+        } else {
+            return "Hi"
+        }
+    }
+    alert(test());
+</script>
+</html>
