@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function demo(number) {
+        if (number === 2) {
+            return number
+        } else {
+            return demo(number - 1) * number
+        }
+    }
+
+    // alert(demo(5))
+
+    //giai thừa: 5! = 5*4*3*2*1
+    
+
+    function isPalindrome() {
+        let string = prompt("Nhập chuỗi bất kỳ")
+        let arr = string.split("")
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] !== arr[arr.length - 1 - i]) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    //nếu dùng đệ quy: abccba => bccb => cc
+
+    if (isPalindrome()) {
+        alert("Chuỗi này là chuỗi đối xứng")
+    } else {
+        alert("Chuỗi này không là chuỗi đối xứng")
+    }
+
+    //abchcba <=> abchcba
+    //abcbca <=> acbcba
+</script>
+</html>

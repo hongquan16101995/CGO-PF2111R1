@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    //snt nhỏ hơn 10000
+    function primeLessThan10000() {
+        let number = 2
+        while(number < 10000) {
+            if (isPrime(number)) {
+                document.write(number + "; ")
+            }
+            number++
+        }
+    }
+    // primeLessThan10000()
+    //hiển thị 50 snt đầu tiên
+    let count1 = +prompt("Nhập vào số lg số nt: ")
+    function countPrime50(bienDem) {
+        let number = 2
+        let count = 0
+        while(count < bienDem) {
+            if (isPrime(number)) {
+                document.write(number + "; ")
+                count++
+            }
+            number++
+           
+        }
+    }
+    countPrime50(count1)
+    // countPrime50()
+    //tổng 20 snt tính từ số 17
+    function sumPrime20From17() {
+        let number = 17
+        let count = 0
+        let sum = 0
+        while(count < 20) {
+            if (isPrime(number)) {
+                document.write(number + "; ")
+                sum += number
+                count++
+            }
+            number++
+        }
+        return sum
+    }
+    // alert(sumPrime20From17())
+</script>
+</html>
