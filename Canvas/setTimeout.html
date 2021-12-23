@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="800" height="500" id="myCanvas" style="border: 1px solid;"></canvas>
+    <br>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    let x = 10
+    let speed = 1
+    let check = true
+    let timeOut
+
+    function rectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d")
+        ctx.fillStyle = "red"
+        ctx.fillRect(300, x, 200, 100)
+        ctx.fill()
+    }
+
+    function moveDown() {
+        x += speed
+        if (x == 400) {
+            check = false
+        }
+    }
+
+    function moveUp() {
+        x -= speed
+        if (x == 10) {
+            check = true
+        }
+    }
+
+    function run() {
+        let ctx = document.getElementById("myCanvas").getContext("2d")
+        ctx.clearRect(300, x, 200, 100)
+        if (check == true) {
+            moveDown()
+        } else {
+            moveUp()
+        }
+        rectangle()
+        console.log(x);
+    }
+
+    function start() {
+        timeOut = setInterval(run, 1)
+    }
+
+    function stop() {
+        clearInterval(timeOut)
+    }
+</script>
+
+</html>

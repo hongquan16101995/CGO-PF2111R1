@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //bai1 
+    function compare(number1, number2) {
+        if (number1 < number2) {
+            alert("số thứ nhất nhỏ hơn số thứ 2")
+        } else {
+            alert(number1 + number2)
+        }
+    }
+
+    //bai2
+    let arrayStar1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrayStar2 = ["UrsaMinor", "Tarurus", "Cygnus", "Lyra", "Aquila", "UrsaMajor", "Leo"];
+
+    function findStar(star) {
+        let check = false
+        for (let i = 0; i < arrayStar1.length; i++) {
+            if (star === arrayStar1[i]) {
+                alert(arrayStar2[i])
+                check = true
+                break
+            }
+        }
+        if (!check) {
+            alert("Không tìm thấy ngôi sao đó")
+        }
+    }
+
+    //bai3
+    function square(number) {
+        //Math.pow(cơ số, số mũ): tính lũy thừa
+        alert(Math.pow(number, 2))
+        // alert(number**2)
+        // alert(number*number)
+    }
+
+    //bai4
+    function bai4(r) {
+        alert("Diện tích: " + (Math.PI * r * r).toFixed(4) + "; Chu vi: " + (Math.PI * 2 * r).toFixed(4))
+        //Math.PI: lấy số PI trong toán học
+    }
+
+    //bai5
+    function giaiThua(number) {
+        let result = 1
+        for (let i = 1; i <= number; i++) {
+            result *= i
+        }
+        alert(result)
+    }
+
+    //bai6
+    function checkNumberAndChar(character) {
+        //isNaN(): kiểm tra 1 ký tự, trả về true nếu là chữ; false nếu là số
+        if (isNaN(character)) {
+            alert("False")
+        } else {
+            alert("True")
+        }
+    }
+
+    //bai7
+    function findMin(a, b, c) {
+        let min = a
+        if (min > b) {
+            min = b
+        }
+        if (min > c) {
+            min = c
+        }
+        return (min)
+    }
+
+    //bai8
+    function checkPositive(number) {
+        if (number > 0) {
+            return "True"
+        } else {
+            return "False"
+        }
+    }
+
+    //bai9
+    function daoMang(array) {
+        for (let i = 0; i < array.length / 2; i++) {
+            let temp = array[i]
+            array[i] = array[array.length - 1 - i]
+            array[array.length - 1 - i] = temp
+        }
+        return array
+    }
+
+    //bai10
+    function countChar(array, element) {
+        let count = 0
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === element) {
+                count++
+            }
+        }
+        if (count !== 0) {
+            return count
+        } else {
+            return "-1"
+        }
+    }
+
+</script>
+
+</html>
