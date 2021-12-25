@@ -13,15 +13,29 @@
     function line() {
         let ctx = document.getElementById("myCanvas").getContext("2d")
         ctx.moveTo(0, 0)
-        ctx.lineTo(200, 100)
+        ctx.lineTo(800, 500)
+        ctx.stroke()
+    }
+
+    function line2() {
+        let ctx = document.getElementById("myCanvas").getContext("2d")
+        ctx.moveTo(800, 0)
+        ctx.lineTo(0, 500)
+        ctx.stroke()
+    }
+
+    function line3() {
+        let ctx = document.getElementById("myCanvas").getContext("2d")
+        ctx.moveTo(400, 0)
+        ctx.lineTo(400, 500)
         ctx.stroke()
     }
 
     function rectangle() {
         let ctx = document.getElementById("myCanvas").getContext("2d")
-        ctx.fillStyle = "red"
+        ctx.fillStyle = "blue"
         ctx.fillRect(300,300,200,100)
-        ctx.fill()
+        // ctx.fill()
     }
 
     function circle() {
@@ -34,7 +48,9 @@
         ctx.closePath()
     }
 
-    line()
+    // line()
+    // line2()
+    // line3()
     rectangle()
     circle()
 </script>
