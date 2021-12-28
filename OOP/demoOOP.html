@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Object Literal:
+    let human1 = {
+        name: "Quân", age: 26, weight: 67, height: 1.6,
+        run() {
+            console.log("đang chạy")
+        }, eat() {
+            console.log("đang ăn")
+        }
+    }
+    console.log(human1.name)
+    console.log(human1.weight)
+    human1.eat()
+
+    console.log("----------------");
+    //Class with Function: (cú pháp tạo class trong JS ES5)
+    function Human(name, age) {
+        this.name = name
+        this.age = age
+
+        this.eat = function () {
+            console.log("đang ăn")
+        }
+    }
+
+    let human2 = new Human("Quân", 26)
+    console.log(human2.name)
+    console.log(human2.age)
+    human2.eat()
+
+    console.log("----------------");
+    //Class with keywork Class: (cú pháp tạo class trong JS ES6)
+    class HumanClass {
+        name
+        age
+
+        constructor(name, age) {
+            this.name = name
+            this.age = age
+        }
+
+        //cặp phương thức getter/setter
+        //getter: dùng lấy giá trị của thuộc tính tại thời điểm gọi
+        //setter: đặt lại giá trị của thuộc tính theo gtri được truyền vào
+        getName() {
+            return this.name
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getAge() {
+            return this.age
+        }
+
+        setAge(age) {
+            this.age = age
+        }
+        
+        eat() {
+            console.log("đang ăn")
+        }
+    }
+
+    let human3 = new HumanClass("Quân", 26)
+    console.log(human3.name)
+    console.log(human3.age)
+    human3.eat()
+
+    console.log("----------------");
+    console.log(human3.getName())
+    console.log(human3.getAge())
+    human3.setName("Hiếu")
+    human3.setAge(24)
+    console.log(human3.getName())
+    console.log(human3.getAge())
+</script>
+
+</html>

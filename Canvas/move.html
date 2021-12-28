@@ -38,7 +38,7 @@
     function play() {
         let ctx = document.getElementById("myCanvas").getContext("2d")
         ctx.clearRect(0,0, 800, 500)
-        // check()
+        check()
         moveX()
         moveY()
         circle()
@@ -55,7 +55,7 @@
     }
     
     function check() {
-        if (y > 450) {
+        if (y > 430) {
             clearInterval(time)
             alert("You die")
         }
