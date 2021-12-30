@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="gameBoard" style="border: 1px solid; width: 1200px; height: 600px;"></div>
+    <br>
+    <button onclick="start()">Start</button>&ensp;
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    class Hero {
+        image
+        left
+        top
+        speed
+        width
+        height
+
+        constructor(image, left, top, speed, width, height) {
+            this.image = image
+            this.left = left
+            this.top = top
+            this.speed = speed
+            this.width = width
+            this.height = height
+        }
+
+        getElementImage() {
+            return "<img src=" + this.image + " width=" + this.width + " height=" + this.height +
+                " style=" + '"' + "position: relative; left: " + this.left + "px; top: " + this.top + "px;" + '"' + ">"
+        }
+
+        moveRight() {
+            this.left += this.speed
+        }
+
+        moveLeft() {
+            this.left -= this.speed
+        }
+
+        moveDown() {
+            this.top += this.speed
+        }
+
+        moveUp() {
+            this.top -= this.speed
+        }
+    }
+
+    // let speed = +prompt("Nhập vào tốc độ bạn cần: ")
+
+    let hero = new Hero("ava.jpg", 0, 0, 20, 100, 100)
+
+    function play() {
+        if (hero.left < 1100 && hero.top == 0) {
+            hero.moveRight()
+        } else if (hero.top < 500 && hero.left == 1100) {
+            hero.moveDown()
+        } else if (hero.left > 0) {
+            hero.moveLeft()
+        } else if (hero.top > 0) {
+            hero.moveUp()
+        }
+
+        document.getElementById("gameBoard").innerHTML = hero.getElementImage()
+        setTimeout(play, 50)
+    }
+    play()
+
+    // let myInterval
+    // function start() {
+    //     myInterval = setInterval(play, 50)
+    // }
+
+    // function stop() {
+    //     clearInterval(myInterval)
+    // }
+</script>
+
+</html>

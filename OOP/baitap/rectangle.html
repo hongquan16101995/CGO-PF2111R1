@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="800" height="500" style="border: 1px solid" id="canvas"></canvas>
+</body>
+<script>
+    class Rectangle {
+        width
+        height
+
+        constructor(width, height) {
+            this.width = width
+            this.height = height
+        }
+
+        getWidth() {
+            return this.width
+        }
+
+        setWidth(width) {
+            this.width = width
+        }
+
+        getHeight() {
+            return this.height
+        }
+
+        setHeight(height) {
+            this.height = height
+        }
+
+        getPerimeter() {
+            return (this.width + this.height) * 2
+        }
+
+        getArea() {
+            return this.width * this.height
+        }
+
+        drawRectangle() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.fillStyle = "red"
+            ctx.fillRect(50, 50, this.width, this.height)
+        }
+    }
+
+    let rect = new Rectangle(150, 80)
+    console.log("Chu vi hình CN là: " + rect.getPerimeter());
+    console.log("Diện tích hình CN là: " + rect.getArea());
+    rect.drawRectangle()
+</script>
+</html>
