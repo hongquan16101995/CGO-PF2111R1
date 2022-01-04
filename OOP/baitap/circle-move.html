@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="800" height="500" style="border: 1px solid;" id="canvas"></canvas>
+    <br>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+</body>
+<script>
+    class MyCircle {
+        x
+        y
+        radius
+
+        constructor(x, y, radius) {
+            this.x = x
+            this.y = y
+            this.radius = radius
+        }
+
+        move() {
+            this.x += 1
+            this.y += 0.5
+            this.radius += 0.1
+        }
+
+        draw() {
+            let ctx = document.getElementById("canvas").getContext("2d")
+            ctx.beginPath()
+            ctx.fillStyle = "red"
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2)
+            ctx.fill()
+            ctx.closePath()
+        }
+    }
+
+    let circle = new MyCircle(50, 50, 20)
+
+    function play() {
+        let ctx = document.getElementById("canvas").getContext("2d")
+        ctx.clearRect(0,0,800,500)
+        circle.move()
+        circle.draw()
+    }
+
+    let check
+
+    function start() {
+        check = setInterval(play, 10)
+    }
+
+    function stop() {
+        clearInterval(check)
+    }
+</script>
+</html>

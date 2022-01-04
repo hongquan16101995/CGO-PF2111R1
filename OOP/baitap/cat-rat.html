@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Rat {
+        name
+        weight
+        speed
+        status
+
+        constructor(name, weight, speed, status){
+            this.name = name
+            this.weight = weight
+            this.speed = speed
+            this.status = status
+        }    
+
+        makeSound() {
+            console.log("Chít chít");
+        }
+
+        getWeight() {
+            return this.weight
+        }
+
+        getSpeed() {
+            return this.speed
+        }
+
+        setSpeed(speed) {
+            this.speed = speed
+        }
+
+        getStatus() {
+            return this.status
+        }
+
+        setStatus() {
+            this.status = status
+        }
+    }
+
+    class Cat {
+        name
+        weight
+        maxSpeed
+
+        constructor(name, weight, speed){
+            this.name = name
+            this.weight = weight
+            this.maxSpeed = speed
+        }  
+        
+        getWeight() {
+            return this.weight
+        }
+
+        catchRat(rat) {
+            if (this.maxSpeed > rat.getSpeed()) {
+                console.log("Đã bắt được");
+                console.log("Đang ăn");
+                this.eatRat(rat)
+                console.log(this.weight);
+            } else {
+                 console.log("Chạy chậm quá, không bắt được");
+            }
+        }
+
+        eatRat(rat) {
+            if (rat.getStatus()) {
+                this.weight += rat.getWeight()
+                rat.setStatus(false)
+                console.log("Ăn xong");
+            } else {
+                console.log("Chuột chết rồi, thúi lắm, không ăn được");
+            }
+        }
+    }
+
+    let rat1 = new Rat("rat1", 2, 10, true)
+    let rat2 = new Rat("rat2", 3, 20, true)
+    let rat3 = new Rat("rat1", 4, 10, false)
+    let rat4 = new Rat("rat1", 5, 20, false)
+    let cat = new Cat("cat", 10, 15)
+</script>
+</html>

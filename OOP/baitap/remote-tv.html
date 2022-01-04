@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class TV {
+        chanel
+        volumn
+        status
+
+        constructor(chanel, volumn) {
+            this.chanel = chanel
+            this.volumn = volumn
+            this.status = false
+        }
+
+        getChanel() {
+            return this.chanel
+        }
+
+        getVolumn() {
+            return this.volumn
+        }
+
+        getStatus() {
+            return this.status
+        }
+
+        plusVolumn() {
+            this.volumn++
+        }
+
+        decreaseVolumn() {
+            this.volumn--
+        }
+
+        plusChanel() {
+            this.chanel++
+        }
+
+        decreaseChanel() {
+            this.chanel--
+        }
+
+        controlChanel(chanel) {
+            this.chanel = chanel
+        }
+    }
+
+    class Remote {
+        code
+
+        constructor(code) {
+            this.code = code
+        }
+
+        onOffTv(tv) {
+            tv.status = !tv.status
+        }
+
+        plusVolumn(tv) {
+            if (tv.getStatus()) {
+                tv.plusVolumn()
+            } else {
+                console.log("Bật tv đã");
+            }
+        }
+
+        decreaseVolumn(tv) {
+            if (tv.getStatus()) {
+                tv.decreaseVolumn()
+            } else {
+                console.log("Bật tv đã");
+            }
+        }
+
+        plusChanel(tv) {
+            if (tv.getStatus()) {
+                tv.plusChanel()
+            } else {
+                console.log("Bật tv đã");
+            }
+        }
+
+        decreaseChanel(tv) {
+            if (tv.getStatus()) {
+                tv.decreaseChanel()
+            } else {
+                console.log("Bật tv đã");
+            }
+        }
+
+        controlChanel(tv, chanel) {
+            if (tv.getStatus()) {
+                tv.controlChanel(chanel)
+            } else {
+                console.log("Bật tv đã");
+            }
+        }
+    }
+
+    let tv = new TV(0,0)
+    let remote = new Remote(1234)
+</script>
+
+</html>
