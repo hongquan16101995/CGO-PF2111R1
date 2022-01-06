@@ -1,0 +1,33 @@
+table {
+    width: 400px;
+}
+
+#amount {
+    color: red;
+    column-span: 2;
+    text-align: right;
+}
+
+button {
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    width: 70px;
+    height: 30px;
+}
+
+input {
+    height: 23px;
+    border-radius: 4px;
+}
+
+#div_input {
+    background-color: rgb(231, 216, 216);
+    padding: 20px;
+    width: 250px;
+    border-radius: 7px;
+}
+
+table {
+    width: 700px;
+}
