@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    localStorage.setItem("Score4", 50)
+    localStorage.setItem("Score1", 100)
+    localStorage.setItem("Score2", 20)
+    localStorage.setItem("Score3", 30)
+    localStorage.setItem("Score5", 40)
+    // console.log(localStorage.getItem("Score2"));
+    // console.log(localStorage.length);
+    let max = +localStorage.getItem("Score1")
+    for(i = 1; i <= localStorage.length; i++) {
+        if (+localStorage.getItem("Score" + i) > max) {
+            max = localStorage.getItem("Score" + i)
+        }
+    }
+    console.log(max);
+</script>
+</html>

@@ -1,33 +1,40 @@
 let arrayProduct = []
 arrayProduct.push(new Product("Iphone 13", "Apple", "Pink", 50000000, 40, "Rất đắt!!!"))
-arrayProduct.push(new Product("Iphone 13", "Apple", "Pink", 50000000, 40, "Rất đắt!!!"))
+arrayProduct.push(new Product("Iphone 12", "Apple", "Red", 40000000, 50, "Rất đắt!!!"))
+arrayProduct.push(new Product("Iphone 11", "Apple", "Blue", 30000000, 30, "Rất đắt!!!"))
 let value
 
 function displayProduct() {
-    let data = "<table><tr><td><b>Name</b></td>" 
-                + "<td><b>Brand</b></td>"
-                + "<td><b>Color</b></td>"
-                + "<td><b>Price</b></td>"
-                + "<td><b>Quantity</b></td>"
-                + "<td><b>Description</b></td>"
-                + "<td id='amount'><b>"+ arrayProduct.length +" products</b></td></tr>"
+    let data = "<table><tr><td><b>Name</b></td>"
+        + "<td><b>Brand</b></td>"
+        + "<td><b>Color</b></td>"
+        + "<td><b>Price</b></td>"
+        + "<td><b>Quantity</b></td>"
+        + "<td><b>Description</b></td>"
+        + "<td id='amount'><b>" + arrayProduct.length + " products</b></td></tr>"
     for (let i = 0; i < arrayProduct.length; i++) {
         data += "<tr>"
-        data += "<td>"+ arrayProduct[i].name +"</td>"
-        data += "<td>"+ arrayProduct[i].brand +"</td>"
-        data += "<td>"+ arrayProduct[i].color +"</td>"
-        data += "<td>"+ arrayProduct[i].price +"</td>"
-        data += "<td>"+ arrayProduct[i].quantity +"</td>"
-        data += "<td>"+ arrayProduct[i].description +"</td>"
-        data += "<td><button onclick='editProduct("+ i +")''>Edit</button></td>"
-        data += "<td><button onclick='deleteProduct("+ i +")''>Delete</button></td>"
+        data += "<td>" + arrayProduct[i].name + "</td>"
+        data += "<td>" + arrayProduct[i].brand + "</td>"
+        data += "<td>" + arrayProduct[i].color + "</td>"
+        data += "<td>" + arrayProduct[i].price + "</td>"
+        data += "<td>" + arrayProduct[i].quantity + "</td>"
+        data += "<td>" + arrayProduct[i].description + "</td>"
+        data += "<td><button onclick='editProduct(" + i + ")''>Edit</button></td>"
+        data += "<td><button onclick='deleteProduct(" + i + ")''>Delete</button></td>"
+        data += "<td><button onclick='addToCart(" + i + ")''>Add to cart</button></td>"
         data += "</tr>"
     }
     data += "<table>"
     document.getElementById("result").innerHTML = data
 }
 
-displayProduct()
+function addToCart(index) {
+    console.log(index);
+    let a = arrayProduct[index]
+    cartProduct.push(a)
+    displayCart()
+}
 
 function addProduct() {
     let name = document.getElementById("addName").value
@@ -69,3 +76,5 @@ function deleteProduct(index) {
     }
     displayProduct()
 }
+
+window.onload = displayProduct
